@@ -18,6 +18,34 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="cube.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="mesh.cpp" />
+    <ClCompile Include="model.cpp" />
+    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="skybox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="cube.h" />
+    <ClInclude Include="mesh.h" />
+    <ClInclude Include="model.h" />
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="skybox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fragment.glsl" />
+    <None Include="meshFrag.glsl" />
+    <None Include="meshVert.glsl" />
+    <None Include="skyFrag.glsl" />
+    <None Include="skyVert.glsl" />
+    <None Include="vertex.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="C:\Users\amrmo\Downloads\sample2.png" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{217DBA3F-7712-4765-A633-90F6DCAC694D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -88,10 +116,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\assimp-3.3.1\include;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\Simple OpenGL Image Library\src;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glm;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN32\include;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\assimp-3.3.1\build\code\Debug;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\Simple OpenGL Image Library\lib;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN32\lib-vc2015;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;SOIL.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -101,10 +132,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\include;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN64\lib-vc2015;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -116,12 +150,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\assimp-3.3.1\include;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\Simple OpenGL Image Library\src;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glm;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN32\include;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\assimp-3.3.1\build\code\Debug;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\Simple OpenGL Image Library\lib;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN32\lib-vc2015;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\lib\Release\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;SOIL.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -133,16 +170,17 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\include;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glfw-3.2.1.bin.WIN64\lib-vc2015;C:\Users\amrmo\OneDrive\Documents\Visual Studio 2015\Libraries\glew-2.0.0\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
