@@ -41,6 +41,8 @@ int main()
 	Skybox sky;
 
 	Model nanosuit("nanosuit2.3ds");
+	Model monkey("monkey.obj");
+	Shader monkeyShader("meshVert.glsl", "meshFrag.glsl");
 	Shader nanosuitShader("meshVert.glsl","meshFrag.glsl");
 	Cube cube;
 	Cube cube2;
@@ -141,11 +143,20 @@ int main()
 		glUniformMatrix4fv(glGetUniformLocation(nanosuitShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(cam.view));
 
 		glm::mat4 model;
-		model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f)); // Translate it down a bit so it's at the center of the scene
-		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	// It's a bit too big for our scene, so scale it down
-		model = glm::rotate(model,glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(5.0f, 0.0f, 0.0f)); 
+		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));	
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f)); 
 		glUniformMatrix4fv(glGetUniformLocation(nanosuitShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(model));
 		nanosuit.draw(nanosuitShader);
+
+		monkeyShader.use();
+		glm::mat4 Monkeymodel;
+		Monkeymodel = glm::translate(model, glm::vec3(12.0f, 5.0f, 0.0f));
+
+		glUniformMatrix4fv(glGetUniformLocation(monkeyShader.Program, "projection"), 1, GL_FALSE, glm::value_ptr(cam.proj));
+		glUniformMatrix4fv(glGetUniformLocation(monkeyShader.Program, "view"), 1, GL_FALSE, glm::value_ptr(cam.view));
+		glUniformMatrix4fv(glGetUniformLocation(monkeyShader.Program, "model"), 1, GL_FALSE, glm::value_ptr(Monkeymodel));
+		monkey.draw(monkeyShader);
 
 		lastTime = currentTime;
 
