@@ -36,6 +36,8 @@
     <ClInclude Include="skybox.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="dogFrag.glsl" />
+    <None Include="dogVert.glsl" />
     <None Include="fragment.glsl" />
     <None Include="meshFrag.glsl" />
     <None Include="meshVert.glsl" />

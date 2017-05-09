@@ -79,6 +79,12 @@
     <None Include="meshFrag.glsl">
       <Filter>Shader Files</Filter>
     </None>
+    <None Include="dogVert.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="dogFrag.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="C:\Users\amrmo\Downloads\sample2.png">
